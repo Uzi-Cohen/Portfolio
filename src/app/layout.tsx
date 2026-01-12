@@ -1,10 +1,7 @@
 import type { Metadata } from 'next'
-import { Inter } from 'next/font/google'
 import './globals.css'
 import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
-
-const inter = Inter({ subsets: ['latin'], variable: '--font-inter' })
 
 export const metadata: Metadata = {
   title: 'Uzi Cohen | QA Automation Engineer',
@@ -35,7 +32,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className="scroll-smooth">
-      <body className={`${inter.variable} font-sans antialiased`}>
+      <body className="font-sans antialiased" style={{ fontFamily: '"Lucida Grande", "Segoe UI", Tahoma, Verdana, Arial, sans-serif' }}>
         <Navbar />
         <main className="min-h-screen">
           {children}
