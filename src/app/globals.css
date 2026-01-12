@@ -8,11 +8,11 @@
   }
 
   body {
-    @apply bg-slate-50 dark:bg-slate-950 text-slate-900 dark:text-slate-100;
+    @apply bg-slate-950 text-slate-100;
   }
 
   ::selection {
-    @apply bg-blue-500/30;
+    @apply bg-pink-500/30;
   }
 }
 
@@ -25,36 +25,79 @@
     @apply py-16 md:py-24 lg:py-32;
   }
 
-  .gradient-text {
-    @apply bg-gradient-to-r from-blue-500 via-violet-500 to-blue-500 bg-clip-text text-transparent bg-[length:200%_auto] animate-gradient;
+  /* Retro Neon Text */
+  .neon-text {
+    @apply bg-gradient-to-r from-cyan-400 via-pink-500 to-purple-500 bg-clip-text text-transparent;
+    text-shadow: 0 0 20px rgba(236, 72, 153, 0.5), 0 0 40px rgba(6, 182, 212, 0.3);
   }
 
+  .neon-text-pink {
+    @apply text-pink-500;
+    text-shadow: 0 0 10px rgba(236, 72, 153, 0.8), 0 0 20px rgba(236, 72, 153, 0.5), 0 0 40px rgba(236, 72, 153, 0.3);
+  }
+
+  .neon-text-cyan {
+    @apply text-cyan-400;
+    text-shadow: 0 0 10px rgba(34, 211, 238, 0.8), 0 0 20px rgba(34, 211, 238, 0.5), 0 0 40px rgba(34, 211, 238, 0.3);
+  }
+
+  /* Retro Card */
   .card {
-    @apply bg-white dark:bg-slate-900 rounded-2xl shadow-lg shadow-slate-200/50 dark:shadow-slate-900/50 border border-slate-200/50 dark:border-slate-800/50;
+    @apply bg-slate-900/80 backdrop-blur-sm rounded-xl border border-pink-500/20;
+    box-shadow: 0 0 20px rgba(236, 72, 153, 0.1), inset 0 1px 0 rgba(255, 255, 255, 0.05);
   }
 
   .card-hover {
-    @apply transition-all duration-300 hover:shadow-xl hover:shadow-blue-500/10 hover:border-blue-500/20 hover:-translate-y-1;
+    @apply transition-all duration-300 hover:border-cyan-400/40;
+    &:hover {
+      box-shadow: 0 0 30px rgba(6, 182, 212, 0.2), 0 0 60px rgba(236, 72, 153, 0.1);
+    }
   }
 
+  /* Retro Buttons */
   .btn-primary {
-    @apply inline-flex items-center justify-center gap-2 px-6 py-3 bg-gradient-to-r from-blue-500 to-blue-600 text-white font-medium rounded-xl shadow-lg shadow-blue-500/25 hover:shadow-xl hover:shadow-blue-500/40 hover:from-blue-600 hover:to-blue-700 transition-all duration-300 hover:-translate-y-0.5;
+    @apply inline-flex items-center justify-center gap-2 px-6 py-3 font-bold rounded-lg transition-all duration-300;
+    background: linear-gradient(135deg, #ec4899 0%, #8b5cf6 50%, #06b6d4 100%);
+    box-shadow: 0 0 20px rgba(236, 72, 153, 0.4), 0 4px 15px rgba(0, 0, 0, 0.3);
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+  }
+
+  .btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 0 30px rgba(236, 72, 153, 0.6), 0 0 60px rgba(6, 182, 212, 0.3), 0 6px 20px rgba(0, 0, 0, 0.4);
   }
 
   .btn-secondary {
-    @apply inline-flex items-center justify-center gap-2 px-6 py-3 bg-slate-100 dark:bg-slate-800 text-slate-900 dark:text-slate-100 font-medium rounded-xl border border-slate-200 dark:border-slate-700 hover:bg-slate-200 dark:hover:bg-slate-700 transition-all duration-300;
+    @apply inline-flex items-center justify-center gap-2 px-6 py-3 font-bold rounded-lg transition-all duration-300 border-2 border-cyan-400/50 text-cyan-400 bg-transparent;
   }
 
+  .btn-secondary:hover {
+    @apply border-cyan-400 bg-cyan-400/10;
+    box-shadow: 0 0 20px rgba(6, 182, 212, 0.3);
+  }
+
+  /* Retro Skill Tag */
   .skill-tag {
-    @apply px-3 py-1.5 text-sm font-medium bg-gradient-to-r from-blue-50 to-violet-50 dark:from-blue-950 dark:to-violet-950 text-blue-700 dark:text-blue-300 rounded-lg border border-blue-200 dark:border-blue-800;
+    @apply px-3 py-1.5 text-sm font-medium rounded-lg border transition-all duration-300;
+    background: linear-gradient(135deg, rgba(139, 92, 246, 0.1) 0%, rgba(236, 72, 153, 0.1) 100%);
+    border-color: rgba(236, 72, 153, 0.3);
+    color: #f9a8d4;
   }
 
+  .skill-tag:hover {
+    border-color: rgba(6, 182, 212, 0.5);
+    box-shadow: 0 0 15px rgba(6, 182, 212, 0.2);
+  }
+
+  /* Nav Link */
   .nav-link {
-    @apply relative text-slate-600 dark:text-slate-400 hover:text-blue-500 dark:hover:text-blue-400 transition-colors duration-200 font-medium;
+    @apply relative text-slate-400 hover:text-cyan-400 transition-colors duration-200 font-medium;
   }
 
   .nav-link::after {
-    @apply content-[''] absolute left-0 bottom-0 w-0 h-0.5 bg-blue-500 transition-all duration-300;
+    @apply content-[''] absolute left-0 bottom-0 w-0 h-0.5 transition-all duration-300;
+    background: linear-gradient(90deg, #06b6d4, #ec4899);
+    box-shadow: 0 0 10px rgba(6, 182, 212, 0.5);
   }
 
   .nav-link:hover::after {
@@ -84,35 +127,89 @@
   }
 }
 
-/* Custom scrollbar */
+/* Custom scrollbar - Retro */
 ::-webkit-scrollbar {
   width: 8px;
   height: 8px;
 }
 
 ::-webkit-scrollbar-track {
-  @apply bg-slate-100 dark:bg-slate-900;
+  background: #0f172a;
 }
 
 ::-webkit-scrollbar-thumb {
-  @apply bg-slate-300 dark:bg-slate-700 rounded-full;
+  background: linear-gradient(180deg, #ec4899, #8b5cf6);
+  border-radius: 4px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  @apply bg-slate-400 dark:bg-slate-600;
+  background: linear-gradient(180deg, #f472b6, #a855f7);
 }
 
-/* Noise texture overlay for hero */
-.noise-bg::before {
+/* Retro Grid Background */
+.retro-grid {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 50%;
+  background: linear-gradient(to bottom, transparent 0%, rgba(6, 182, 212, 0.03) 100%);
+  background-image:
+    linear-gradient(rgba(6, 182, 212, 0.1) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(6, 182, 212, 0.1) 1px, transparent 1px);
+  background-size: 50px 50px;
+  transform: perspective(500px) rotateX(60deg);
+  transform-origin: center top;
+  mask-image: linear-gradient(to bottom, transparent, black 20%, black 80%, transparent);
+  animation: gridMove 20s linear infinite;
+}
+
+@keyframes gridMove {
+  0% {
+    background-position: 0 0;
+  }
+  100% {
+    background-position: 0 50px;
+  }
+}
+
+/* Retro Sun */
+.retro-sun {
+  position: absolute;
+  bottom: 20%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 300px;
+  height: 300px;
+  border-radius: 50%;
+  background: linear-gradient(to bottom,
+    #fbbf24 0%,
+    #f97316 30%,
+    #ec4899 60%,
+    #8b5cf6 100%
+  );
+  box-shadow:
+    0 0 60px rgba(251, 191, 36, 0.4),
+    0 0 120px rgba(236, 72, 153, 0.3);
+  mask-image: linear-gradient(to bottom, black 50%, transparent 50%);
+  opacity: 0.8;
+}
+
+.retro-sun::before {
   content: '';
   position: absolute;
   inset: 0;
-  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
-  opacity: 0.03;
-  pointer-events: none;
+  background: repeating-linear-gradient(
+    to bottom,
+    transparent 0px,
+    transparent 8px,
+    rgba(15, 23, 42, 0.3) 8px,
+    rgba(15, 23, 42, 0.3) 12px
+  );
+  border-radius: 50%;
 }
 
-/* Space Stars Animation */
+/* Space Stars - Retro */
 .stars-small,
 .stars-medium,
 .stars-large {
@@ -125,28 +222,30 @@
 }
 
 .stars-small {
-  background-image: radial-gradient(1px 1px at 20px 30px, white, transparent),
-    radial-gradient(1px 1px at 40px 70px, rgba(255, 255, 255, 0.8), transparent),
-    radial-gradient(1px 1px at 50px 160px, rgba(255, 255, 255, 0.6), transparent),
-    radial-gradient(1px 1px at 90px 40px, white, transparent),
-    radial-gradient(1px 1px at 130px 80px, rgba(255, 255, 255, 0.7), transparent),
-    radial-gradient(1px 1px at 160px 120px, white, transparent),
-    radial-gradient(1px 1px at 200px 50px, rgba(255, 255, 255, 0.5), transparent),
-    radial-gradient(1px 1px at 220px 130px, white, transparent),
-    radial-gradient(1px 1px at 250px 20px, rgba(255, 255, 255, 0.8), transparent),
-    radial-gradient(1px 1px at 280px 90px, white, transparent);
+  background-image:
+    radial-gradient(1px 1px at 20px 30px, #f472b6, transparent),
+    radial-gradient(1px 1px at 40px 70px, #22d3ee, transparent),
+    radial-gradient(1px 1px at 50px 160px, #a855f7, transparent),
+    radial-gradient(1px 1px at 90px 40px, #fbbf24, transparent),
+    radial-gradient(1px 1px at 130px 80px, #f472b6, transparent),
+    radial-gradient(1px 1px at 160px 120px, #22d3ee, transparent),
+    radial-gradient(1px 1px at 200px 50px, white, transparent),
+    radial-gradient(1px 1px at 220px 130px, #a855f7, transparent),
+    radial-gradient(1px 1px at 250px 20px, #f472b6, transparent),
+    radial-gradient(1px 1px at 280px 90px, #22d3ee, transparent);
   background-repeat: repeat;
   background-size: 300px 200px;
   animation: twinkle 4s ease-in-out infinite;
 }
 
 .stars-medium {
-  background-image: radial-gradient(1.5px 1.5px at 150px 150px, white, transparent),
-    radial-gradient(1.5px 1.5px at 200px 220px, rgba(255, 255, 255, 0.8), transparent),
-    radial-gradient(1.5px 1.5px at 100px 280px, white, transparent),
-    radial-gradient(1.5px 1.5px at 300px 100px, rgba(255, 255, 255, 0.7), transparent),
-    radial-gradient(1.5px 1.5px at 350px 300px, white, transparent),
-    radial-gradient(1.5px 1.5px at 50px 350px, rgba(255, 255, 255, 0.9), transparent);
+  background-image:
+    radial-gradient(1.5px 1.5px at 150px 150px, #ec4899, transparent),
+    radial-gradient(1.5px 1.5px at 200px 220px, #06b6d4, transparent),
+    radial-gradient(1.5px 1.5px at 100px 280px, #fbbf24, transparent),
+    radial-gradient(1.5px 1.5px at 300px 100px, #a855f7, transparent),
+    radial-gradient(1.5px 1.5px at 350px 300px, #f472b6, transparent),
+    radial-gradient(1.5px 1.5px at 50px 350px, #22d3ee, transparent);
   background-repeat: repeat;
   background-size: 400px 400px;
   animation: twinkle 5s ease-in-out infinite;
@@ -154,10 +253,11 @@
 }
 
 .stars-large {
-  background-image: radial-gradient(2px 2px at 100px 50px, white, transparent),
-    radial-gradient(2px 2px at 400px 150px, rgba(255, 255, 255, 0.9), transparent),
-    radial-gradient(2.5px 2.5px at 250px 300px, white, transparent),
-    radial-gradient(2px 2px at 500px 250px, rgba(255, 255, 255, 0.8), transparent);
+  background-image:
+    radial-gradient(2px 2px at 100px 50px, #f472b6, transparent),
+    radial-gradient(2.5px 2.5px at 400px 150px, #22d3ee, transparent),
+    radial-gradient(3px 3px at 250px 300px, #fbbf24, transparent),
+    radial-gradient(2px 2px at 500px 250px, #a855f7, transparent);
   background-repeat: repeat;
   background-size: 600px 400px;
   animation: twinkle 6s ease-in-out infinite;
@@ -166,9 +266,94 @@
 
 @keyframes twinkle {
   0%, 100% {
-    opacity: 0.5;
+    opacity: 0.4;
   }
   50% {
     opacity: 1;
   }
+}
+
+/* Scanline Effect */
+.scanlines::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: repeating-linear-gradient(
+    0deg,
+    transparent,
+    transparent 2px,
+    rgba(0, 0, 0, 0.1) 2px,
+    rgba(0, 0, 0, 0.1) 4px
+  );
+  pointer-events: none;
+  opacity: 0.3;
+}
+
+/* Neon Border Glow */
+.neon-border {
+  position: relative;
+}
+
+.neon-border::before {
+  content: '';
+  position: absolute;
+  inset: -2px;
+  background: linear-gradient(135deg, #06b6d4, #ec4899, #8b5cf6, #06b6d4);
+  border-radius: inherit;
+  z-index: -1;
+  opacity: 0.5;
+  filter: blur(10px);
+}
+
+/* Retro Chrome Text */
+.chrome-text {
+  background: linear-gradient(
+    180deg,
+    #fff 0%,
+    #c0c0c0 25%,
+    #fff 50%,
+    #8b5cf6 75%,
+    #ec4899 100%
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  filter: drop-shadow(0 2px 2px rgba(0, 0, 0, 0.5));
+}
+
+/* Glow Pulse Animation */
+@keyframes glowPulse {
+  0%, 100% {
+    box-shadow: 0 0 20px rgba(236, 72, 153, 0.4), 0 0 40px rgba(6, 182, 212, 0.2);
+  }
+  50% {
+    box-shadow: 0 0 40px rgba(236, 72, 153, 0.6), 0 0 80px rgba(6, 182, 212, 0.4);
+  }
+}
+
+.glow-pulse {
+  animation: glowPulse 3s ease-in-out infinite;
+}
+
+/* VHS Tracking Effect */
+@keyframes vhsTracking {
+  0% {
+    transform: translateX(0);
+  }
+  2% {
+    transform: translateX(-2px);
+  }
+  4% {
+    transform: translateX(2px);
+  }
+  6% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+.vhs-effect:hover {
+  animation: vhsTracking 0.5s ease-in-out;
 }
