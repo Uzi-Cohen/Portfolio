@@ -12,7 +12,7 @@
   }
 
   ::selection {
-    @apply bg-primary-500/30;
+    @apply bg-blue-500/30;
   }
 }
 
@@ -26,7 +26,7 @@
   }
 
   .gradient-text {
-    @apply bg-gradient-to-r from-primary-500 via-accent-500 to-primary-500 bg-clip-text text-transparent bg-[length:200%_auto] animate-gradient;
+    @apply bg-gradient-to-r from-blue-500 via-violet-500 to-blue-500 bg-clip-text text-transparent bg-[length:200%_auto] animate-gradient;
   }
 
   .card {
@@ -34,11 +34,11 @@
   }
 
   .card-hover {
-    @apply transition-all duration-300 hover:shadow-xl hover:shadow-primary-500/10 hover:border-primary-500/20 hover:-translate-y-1;
+    @apply transition-all duration-300 hover:shadow-xl hover:shadow-blue-500/10 hover:border-blue-500/20 hover:-translate-y-1;
   }
 
   .btn-primary {
-    @apply inline-flex items-center justify-center gap-2 px-6 py-3 bg-gradient-to-r from-primary-500 to-primary-600 text-white font-medium rounded-xl shadow-lg shadow-primary-500/25 hover:shadow-xl hover:shadow-primary-500/40 hover:from-primary-600 hover:to-primary-700 transition-all duration-300 hover:-translate-y-0.5;
+    @apply inline-flex items-center justify-center gap-2 px-6 py-3 bg-gradient-to-r from-blue-500 to-blue-600 text-white font-medium rounded-xl shadow-lg shadow-blue-500/25 hover:shadow-xl hover:shadow-blue-500/40 hover:from-blue-600 hover:to-blue-700 transition-all duration-300 hover:-translate-y-0.5;
   }
 
   .btn-secondary {
@@ -46,15 +46,15 @@
   }
 
   .skill-tag {
-    @apply px-3 py-1.5 text-sm font-medium bg-gradient-to-r from-primary-50 to-accent-50 dark:from-primary-950/50 dark:to-accent-950/50 text-primary-700 dark:text-primary-300 rounded-lg border border-primary-200/50 dark:border-primary-800/50;
+    @apply px-3 py-1.5 text-sm font-medium bg-gradient-to-r from-blue-50 to-violet-50 dark:from-blue-950 dark:to-violet-950 text-blue-700 dark:text-blue-300 rounded-lg border border-blue-200 dark:border-blue-800;
   }
 
   .nav-link {
-    @apply relative text-slate-600 dark:text-slate-400 hover:text-primary-500 dark:hover:text-primary-400 transition-colors duration-200 font-medium;
+    @apply relative text-slate-600 dark:text-slate-400 hover:text-blue-500 dark:hover:text-blue-400 transition-colors duration-200 font-medium;
   }
 
   .nav-link::after {
-    @apply content-[''] absolute left-0 bottom-0 w-0 h-0.5 bg-primary-500 transition-all duration-300;
+    @apply content-[''] absolute left-0 bottom-0 w-0 h-0.5 bg-blue-500 transition-all duration-300;
   }
 
   .nav-link:hover::after {
